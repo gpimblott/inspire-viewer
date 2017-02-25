@@ -35,7 +35,15 @@ var InspireViewApp = function () {
    */
   self.setupVariables = function () {
     //  Set the environment variables we need.
-    self.port = process.env.PORT || 8090;
+    self.port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8090;
+    self.ip_address = process.env.OPENSHIFT_NODEJS_IP;
+
+
+    /**
+     * Store in Express.
+     */
+    app.set('port', self.port);
+
   };
 
   /**
@@ -166,7 +174,7 @@ var InspireViewApp = function () {
    */
   self.start = function () {
     //  Start the app on the specific interface (and port).
-    self.app.listen(self.port, function () {
+    self.app.listen(self.port, self.ip_address, function () {
       console.log('%s: Server started on %s:%d ...',
         Date(Date.now()), self.port);
     });
