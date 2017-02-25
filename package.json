@@ -35,5 +35,5 @@
     "passport-local": "latest",
     "pg": "4.1.1"
   },
-  "main": "./bin/www"
+  "main": "./server.js"
 }
