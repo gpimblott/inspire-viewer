@@ -87,7 +87,6 @@
 
             $.getJSON("http://locationiq.org/v1/search.php?key={{locationiq_key}}&countrycodes=gb&format=json&q=" + query)
                     .done(function(data){
-                      console.log(data);
                         var found = data[0];
 
                         if( found != undefined) {
