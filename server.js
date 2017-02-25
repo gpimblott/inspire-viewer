@@ -16,7 +16,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var session = require('express-session');
-var express_enforces_ssl = require('express-enforces-ssl');
+//var express_enforces_ssl = require('express-enforces-ssl');
 
 var basicAuth = require('./utils/basicAuth.js');
 
@@ -118,7 +118,7 @@ var InspireViewApp = function () {
       self.app.enable('trust proxy', 1); // trusts first proxy - Heroku load balancer
       console.log("In production mode");
      // self.app.use(express_enforces_ssl());
-      sess.cookie.secure = true;
+     // sess.cookie.secure = true;
     }
 
     self.app.use(session(sess));
