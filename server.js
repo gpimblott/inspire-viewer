@@ -38,7 +38,6 @@ var InspireViewApp = function () {
     self.port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8090;
     self.ip_address = process.env.OPENSHIFT_NODEJS_IP;
 
-
   };
 
   /**
@@ -105,6 +104,10 @@ var InspireViewApp = function () {
     // Setup the Google Analytics ID if defined
     self.app.locals.google_id = process.env.GOOGLE_ID || undefined;
     console.log("GA ID:" + self.app.locals.google_id);
+
+    // Setup the Google Analytics ID if defined
+    self.app.locals.locationiq_key = process.env.LOCATIONIQ_KEY || undefined;
+    console.log("LocationIQ Key:" + self.app.locals.locationiq_key);
 
 
     var cookie_key = process.env.COOKIE_KEY || 'aninsecurecookiekey';

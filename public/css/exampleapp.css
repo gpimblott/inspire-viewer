@@ -1,5 +1,5 @@
 .normal-page {
-    padding-top: 50px;
+    padding-top: 0px;
 }
 
 .index-page {
@@ -17,6 +17,11 @@ html, body {
 }
 
 .fill {
-    min-height: 100%;
-    height: 100%;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
 }
