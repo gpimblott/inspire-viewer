@@ -39,11 +39,6 @@ var InspireViewApp = function () {
     self.ip_address = process.env.OPENSHIFT_NODEJS_IP;
 
 
-    /**
-     * Store in Express.
-     */
-    app.set('port', self.port);
-
   };
 
   /**
@@ -97,6 +92,10 @@ var InspireViewApp = function () {
         defaultLayout: 'main'
       }));
 
+    /**
+     * Store in Express.
+     */
+    self.app.set('port', self.port);
     self.app.set('view engine', 'handlebars');
 
     // Get the Mapbox access token
