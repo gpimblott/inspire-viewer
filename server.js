@@ -1,6 +1,6 @@
 require('dotenv').config({ path: 'process.env' });
 
-var debug = require('debug')('landview:server');
+var debug = require('debug')('inspire:server');
 var http = require('http');
 
 var express = require('express');
@@ -21,12 +21,13 @@ var express_enforces_ssl = require('express-enforces-ssl');
 var basicAuth = require('./utils/basicAuth.js');
 
 var routes = require('./routes/index');
+var map = require('./routes/map');
 
 
 /**
  * Set API Key based on Environment variable
  **/
-var ExampleApp = function () {
+var InspireViewApp = function () {
   var self = this;
 
   /**
@@ -35,7 +36,6 @@ var ExampleApp = function () {
   self.setupVariables = function () {
     //  Set the environment variables we need.
     self.port = process.env.PORT || 8090;
-
   };
 
   /**
@@ -45,7 +45,7 @@ var ExampleApp = function () {
    */
   self.terminator = function (sig) {
     if (typeof sig === "string") {
-      console.log('%s: Received %s - terminating ExampleApp ...',
+      console.log('%s: Received %s - terminating InspireViewApp ...',
         Date(Date.now()), sig);
       process.exit(1);
     }
@@ -91,8 +91,17 @@ var ExampleApp = function () {
 
     self.app.set('view engine', 'handlebars');
 
+    // Get the Mapbox access token
+    self.app.locals.mapbox_token = process.env.MAPBOX_TOKEN|| "";
+    console.log("Mapbox:" + self.app.locals.mapbox_token);
+
+    // Setup the Google Analytics ID if defined
+    self.app.locals.google_id = process.env.GOOGLE_ID || undefined;
+    console.log("GA ID:" + self.app.locals.google_id);
+
 
     var cookie_key = process.env.COOKIE_KEY || 'aninsecurecookiekey';
+    console.log("Cookie Key:" + cookie_key);
     var sess = {
       secret: cookie_key,
       cookie: {}
@@ -113,7 +122,6 @@ var ExampleApp = function () {
       var password = process.env.PASSWORD
       self.app.use(basicAuth.basicAuth(username, password))
     }
-
 
     // view engine setup
     self.app.set('layoutsDir', path.join(__dirname, 'views/layouts'));
@@ -140,14 +148,9 @@ var ExampleApp = function () {
       });
     }
 
-
-    // Add stuff to each request here
-    self.app.use(function (req, res, next) {
-      next();
-    });
-
     // Routes go here
     self.app.use('/', routes);
+    self.app.use('/map', map);
 
 
     self.app.use(function(req, res, next){
@@ -156,7 +159,6 @@ var ExampleApp = function () {
       // get the "status" local available as well
       res.render('404', { status: 404, url: req.url });
     });
-
   };
 
   /**
@@ -165,7 +167,7 @@ var ExampleApp = function () {
   self.start = function () {
     //  Start the app on the specific interface (and port).
     self.app.listen(self.port, function () {
-      console.log('%s: Node server started on %s:%d ...',
+      console.log('%s: Server started on %s:%d ...',
         Date(Date.now()), self.port);
     });
   };
@@ -174,6 +176,6 @@ var ExampleApp = function () {
 /**
  *  main():  Main code.
  */
-var exampleNodeApp = new ExampleApp();
-exampleNodeApp.initialize();
-exampleNodeApp.start();
+var inspireNodeApp = new InspireViewApp();
+inspireNodeApp.initialize();
+inspireNodeApp.start();

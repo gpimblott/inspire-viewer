@@ -1,0 +1,160 @@
+<div class="col-md-12" id="mapid">
+    <div class="col-md-4 col-md-offset-4">
+        <form id="search" class="form-horizontal center-block">
+            <div class="info legend leaflet-control form-group" id="control">
+                <div id="location-lookup" class="form-inline">
+                    <input autocomplete="off" placeholder="Search" class="form-control" id="location-search" width="20"
+                           type="text"/>
+                    <input type="submit" class="button form-control" id="search-button" role="button" value="Search"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script language="JavaScript" src="/js/overlays.js"></script>
+
+<script language="JavaScript">
+
+    // Base World map
+    var mapBoxStreets = L.tileLayer(
+            'https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+                accessToken: '{{mapbox_token}}'
+            });
+
+    var mapBoxSatellite = L.tileLayer(
+            'https://api.mapbox.com/styles/v1/gpimblott/cizl21vq3000p2snuftwgj7q1/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+                accessToken: '{{mapbox_token}}'
+            });
+
+    //    // Define the Land Registry overlay
+    //    var lrLayer = L.WMS.overlay('http://inspire.landregistry.gov.uk/inspire/ows', {
+    //        format: 'image/png',
+    //        layers: 'CP.CadastralParcel',
+    //        transparent: true
+    //    });
+    //
+    //    var floodLayer = L.tileLayer.wms('http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--8d57464f-d465-11e4-8790-f0def148f590', {
+    //        layers: 'eainspire2011-wms-RoFRS',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Environment Agency - Risk of flooding from rivers and the sea"
+    //    });
+    //
+    //    var historicFloodingLayer = L.tileLayer.wms('http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--8d57464f-d465-11e4-8790-f0def148f590', {
+    //        layers: 'eainspire2011-wms-nat_hfm_inspire',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Environment Agency - Historic flooding"
+    //    });
+    //
+    //    var historicLandfillLayer = L.tileLayer.wms('http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--7a955570-d465-11e4-a37c-f0def148f590', {
+    //        layers: 'eainspire2011-wms-historic_landfill_sites_010k_inspire',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Environment Agency - Historic Landfill"
+    //    });
+    //
+    //    var lidar50cmLayer = L.tileLayer.wms('http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--576b6ade-d31f-470b-a044-624a3e7c77c0', {
+    //        layers: 'LIDAR-DTM-TSR-50CM-ENGLAND-EA-WMS',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Environment Agency - 50cm LIDAR"
+    //    });
+    //
+    //    var lidar1mLayer = L.tileLayer.wms('http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--6f51a299-351f-4e30-a5a3-2511da9688f7', {
+    //        layers: 'LIDAR-DSM-TSR-1M-ENGLAND-EA-WMS',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Environment Agency - 1M LIDAR"
+    //    });
+    //
+    //    var greenBeltLayer = L.tileLayer.wms('http://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS', {
+    //        layers: 'Green_Belt_2015_16_WGS84',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Department for Communities and Local Government - Greenbelt 2015-16"
+    //    });
+    //
+    //    var greenBelt2Layer = L.tileLayer.wms('http://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS', {
+    //        layers: 'Local_Authority_Greenbelt_boundaries_2011-12',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Department for Communities and Local Government - Greenbelt 2011-12"
+    //    });
+    //
+    //    var englishCeramonialCounties = L.tileLayer.wms('http://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS', {
+    //        layers: 'English Ceremonial Counties',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Department for Communities and Local Government - Ceremonial counties"
+    //    });
+    //
+    //    var floodDefencesLayer = L.tileLayer.wms('http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--b07dc5b5-f382-4dc1-be4b-464f1e64f12b', {
+    //        layers: 'eainspire2011-wms-spatial-flood-defences',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Environment Agency - Flood Defences"
+    //    });
+    //
+    //
+    //    var roadNoiseLayer = L.tileLayer.wms('http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--2791ebe0-8ebb-4d9f-98d6-bce907becf33', {
+    //        layers: 'eainspire2011-wms-rd_noise_eng_lq16',
+    //        format: 'image/png',
+    //        transparent: true,
+    //        attribution: "Department for Environment, Food and Rural Affairs - Road Noise"
+    //    });
+    //
+
+    // Create the map
+    var map = L.map('mapid', {
+        layers: [ mapBoxStreets ]
+    }).setView([ 51.305, -2.7 ], 13);
+
+    // Create the layer control
+    var baseLayers = {
+        "Streets": mapBoxStreets,
+        "Satellite": mapBoxSatellite
+    };
+
+    var overlays = {};
+
+    overlayData.forEach(function (server) {
+        var overlay = null;
+
+        if (server.tiled) {
+            overlay = L.tileLayer.wms(server.url, {
+                layers: server.layers,
+                format: 'image/png',
+                transparent: true,
+                attribution: server.attribution
+            });
+        } else {
+            overlay = L.WMS.overlay(server.url, {
+                format: 'image/png',
+                layers: server.layers,
+                transparent: true,
+                attribution: server.attribution
+            });
+        }
+
+        overlays[ server.name ] = overlay;
+    });
+    //    var overlays = {
+    //        "English ceremonial counties": englishCeramonialCounties,
+    //        "1m LIDAR Radar": lidar1mLayer,
+    //        "50cm LIDAR Radar": lidar50cmLayer,
+    //        "Land Titles": lrLayer,
+    //        "Historic flooding": historicFloodingLayer,
+    //        "Risk of flooding from rivers and Sea": floodLayer,
+    //        "Historic landfill": historicLandfillLayer,
+    //        "Greenbelt 2015-16": greenBeltLayer,
+    //        "Greenbelt 2011-12": greenBelt2Layer,
+    //        "Flood Defences":floodDefencesLayer,
+    //        "Road Noise" : roadNoiseLayer,
+    //        "Scottish Listed Buildings" : listedBuildingsLayer
+    //    }
+
+    L.control.layers(baseLayers, overlays).addTo(map);
+
+</script>
