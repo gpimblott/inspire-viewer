@@ -21,11 +21,11 @@
     // create the tile layer with correct attribution
     var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 18, attribution: osmAttrib});
+    var osm = new L.TileLayer(osmUrl, {minZoom: 5, maxZoom: 18, attribution: osmAttrib});
 
 
     // start the map in South-East England
-    map.setView(new L.LatLng(51.3, 0.7),9);
+    map.setView(new L.LatLng(53, -2.5),6.5);
     map.addLayer(osm);
 
     // Base World map
@@ -52,20 +52,26 @@
 
     overlayData.forEach(function (server) {
         var overlay = null;
+        var opacity = 1.0;
+        if( server.opacity != undefined) {
+            opacity = server.opacity;
+        }
 
         if (server.tiled) {
             overlay = L.tileLayer.wms(server.url, {
                 layers: server.layers,
                 format: 'image/png',
                 transparent: true,
-                attribution: server.attribution
+                attribution: server.attribution,
+                opacity: opacity
             });
         } else {
             overlay = L.WMS.overlay(server.url, {
                 format: 'image/png',
                 layers: server.layers,
                 transparent: true,
-                attribution: server.attribution
+                attribution: server.attribution,
+                opacity: opacity
             });
         }
 
