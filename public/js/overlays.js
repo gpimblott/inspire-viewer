@@ -4,11 +4,100 @@ var overlayData = [
     groupName: 'Geology',
     layers: [
       {
-        url: 'https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer?',
-        layers: 'BGS.detailed.geology',
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Lanthanum',
         tiled: true,
         opacity: 0.5,
-        name: 'British geology onshore',
+        name: 'Lanthanum concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Magnesium',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Magnesium concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Molybdenum',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Molybdenum concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Sodium',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Sodium concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Niobium',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Niobium concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Neodymium',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Neodymium concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Nickel',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Nickel concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Lead',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Lead concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Phosphorus',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Phosphorus concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Manganese',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Manganese concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Aluminium',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Aluminium concentrations',
+        attribution: "British geological Society"
+      },
+      {
+        url: 'https://map.bgs.ac.uk/arcgis/services/UKSO/UKSO_BGS_NSI/MapServer/WmsServer',
+        layers: 'Topsoil.Calcium',
+        tiled: true,
+        opacity: 0.5,
+        name: 'Calcium concentrations',
+        attribution: "British geological Society"
       }
     ]
   },
@@ -155,12 +244,7 @@ var overlayData = [
         attribution: 'Historic England',
         tiled: true,
         name: 'Protected wrecks'
-      }
-    ]
-  },
-  {
-    groupName: 'Maritime',
-    layers: [
+      },
       {
         url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--13f606fb-237d-4e60-ac9e-1fde07f094fb',
         layers: 'eainspire2011-wms-nest00000060_inspire',

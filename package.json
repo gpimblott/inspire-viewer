@@ -20,7 +20,6 @@
     "dotenv": "1.2.0",
     "ejs": "~2.4.1",
     "express": "~4.14.0",
-    "express-enforces-ssl": "^1.1.0",
     "express-session": "latest",
     "express-handlebars": "latest",
     "morgan": "~1.7.0",
