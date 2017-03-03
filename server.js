@@ -96,6 +96,17 @@ var InspireViewApp = function () {
     self.app.set('port', self.port);
     self.app.set('view engine', 'handlebars');
 
+    // Lets encrypt response
+    var letsEncryptUrl = process.env.LETS_ENCRYPT;
+    var letsEncryptResponse = process.env.LETS_ENCRYPT_RESPONSE;
+
+    if( letsEncryptResponse != undefined && letsEncryptResponse != undefined) {
+      self.app.get('/.well-known/acme-challenge/' + letsEncryptUrl, function (req, res) {
+        res.send(letsEncryptResponse);
+        res.end();
+      });
+    }
+
     // Get the Mapbox access token
     self.app.locals.mapbox_token = process.env.MAPBOX_TOKEN|| "";
     console.log("Mapbox:" + self.app.locals.mapbox_token);
