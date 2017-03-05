@@ -1,7 +1,7 @@
 var map = new L.Map('map');
 
 // create the tile layer with correct attribution
-var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
 var osm = new L.TileLayer(osmUrl, { minZoom: 5, maxZoom: 18, attribution: osmAttrib });
 
@@ -28,7 +28,7 @@ var mapBoxSatellite = L.tileLayer(
     attribution: 'Satellite © <a href="http://www.mapbox.com">Mapbox</a>'
   });
 
-var historicMap = L.tileLayer('http://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg', {
+var historicMap = L.tileLayer('https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg', {
   minZoom: mapMinZoom,
   maxZoom: mapMaxZoom,
   bounds: mapBounds,
