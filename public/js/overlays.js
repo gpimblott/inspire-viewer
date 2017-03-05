@@ -105,7 +105,7 @@ var overlayData = [
     groupName: 'Land Usage',
     layers: [
       {
-        url: 'http://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
+        url: 'https://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
         layers: 'Green_Belt_2015_16_WGS84',
         attribution: "Department for Communities and Local Government",
         tiled: true,
@@ -113,7 +113,7 @@ var overlayData = [
         name: 'Greenbelt 2015-16',
       },
       {
-        url: 'http://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
+        url: 'https://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
         layers: 'Local_Authority_Greenbelt_boundaries_2011-12',
         attribution: "Department for Communities and Local Government",
         tiled: true,
@@ -121,21 +121,21 @@ var overlayData = [
         name: 'Greenbelt 2011-12',
       },
       {
-        url: 'http://inspire.landregistry.gov.uk/inspire/ows',
+        url: 'https://inspire.landregistry.gov.uk/inspire/ows',
         layers: 'CP.CadastralParcel',
         name: 'Land Registry Land Parcels',
         tiled: false,
         attribution: "Land Registry"
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=10000000000000000000000000000000000000000000000000000000',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=10000000000000000000000000000000000000000000000000000000',
         layers: 'eainspire2011-wms-agri_land_class_inspire',
         attribution: 'Natural England',
         tiled: true,
         name: 'Agricultural Land Classification'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--7a955570-d465-11e4-a37c-f0def148f590',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--7a955570-d465-11e4-a37c-f0def148f590',
         layers: 'eainspire2011-wms-historic_landfill_sites_010k_inspire',
         tiled: true,
         attribution: "Environment Agency - Historic Landfill",
@@ -146,7 +146,7 @@ var overlayData = [
     groupName: 'LIDAR',
     layers: [
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--6f59c1ce-cc11-43aa-b11d-e1c3ab43a192',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--6f59c1ce-cc11-43aa-b11d-e1c3ab43a192',
         layers: 'LIDAR-DTM-TSR-25CM-ENGLAND-EA-WMS',
         tiled: true,
         opacity: 0.75,
@@ -155,7 +155,7 @@ var overlayData = [
         group: 'LIDAR'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--576b6ade-d31f-470b-a044-624a3e7c77c0',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--576b6ade-d31f-470b-a044-624a3e7c77c0',
         layers: 'LIDAR-DTM-TSR-50CM-ENGLAND-EA-WMS',
         tiled: true,
         opacity: 0.75,
@@ -164,7 +164,7 @@ var overlayData = [
         group: 'LIDAR'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--aace5ed3-2580-4c2e-bdd8-69b3d473d99d',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--aace5ed3-2580-4c2e-bdd8-69b3d473d99d',
         layers: 'LIDAR-DTM-TSR-1M-ENGLAND-EA-WMS',
         tiled: true,
         opacity: 0.75,
@@ -173,7 +173,7 @@ var overlayData = [
         group: 'LIDAR'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--c67f6085-1ef9-46c8-b908-67e9143deedf',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--c67f6085-1ef9-46c8-b908-67e9143deedf',
         layers: 'LIDAR-DTM-TSR-2M-ENGLAND-EA-WMS',
         tiled: true,
         opacity: 0.75,
@@ -186,7 +186,7 @@ var overlayData = [
     groupName: 'Flooding',
     layers: [
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--8d57464f-d465-11e4-8790-f0def148f590',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--8d57464f-d465-11e4-8790-f0def148f590',
         layers: 'eainspire2011-wms-RoFRS',
         tiled: true,
         attribution: "Environment Agency",
@@ -194,14 +194,14 @@ var overlayData = [
         group: 'Flooding'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--8d57464f-d465-11e4-8790-f0def148f590',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--8d57464f-d465-11e4-8790-f0def148f590',
         layers: 'eainspire2011-wms-nat_hfm_inspire',
         tiled: true,
         attribution: "Environment Agency",
         name: 'Historic flooding'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--b07dc5b5-f382-4dc1-be4b-464f1e64f12b',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--b07dc5b5-f382-4dc1-be4b-464f1e64f12b',
         layers: 'eainspire2011-wms-spatial-flood-defences',
         attribution: "Environment Agency",
         tiled: true,
@@ -214,21 +214,21 @@ var overlayData = [
     groupName: 'Noise',
     layers: [
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--2791ebe0-8ebb-4d9f-98d6-bce907becf33',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--2791ebe0-8ebb-4d9f-98d6-bce907becf33',
         layers: 'eainspire2011-wms-rd_noise_eng_lq16',
         attribution: "Department for Environment, Food and Rural Affairs",
         tiled: true,
         name: 'Road noise',
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--db2d82e4-ba81-4fa6-91b0-cc36b2318c9f',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--db2d82e4-ba81-4fa6-91b0-cc36b2318c9f',
         layers: 'eainspire2011-wms-rl_noise_eng_lq16',
         attribution: "Department for Environment, Food and Rural Affairs",
         tiled: true,
         name: 'Rail noise'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--c4bc5ebd-eab8-4b8a-be54-83d2f7132059',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--c4bc5ebd-eab8-4b8a-be54-83d2f7132059',
         layers: 'eainspire2011-wms-env_noise_dir_aggloms',
         attribution: 'Department for Environment, Food and Rural Affairs',
         tiled: true,
@@ -239,21 +239,21 @@ var overlayData = [
     groupName: 'Maritime',
     layers: [
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=80000000000',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=80000000000',
         layers: 'eainspire2011-wms-protectedwrecks_inspire',
         attribution: 'Historic England',
         tiled: true,
         name: 'Protected wrecks'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--13f606fb-237d-4e60-ac9e-1fde07f094fb',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--13f606fb-237d-4e60-ac9e-1fde07f094fb',
         layers: 'eainspire2011-wms-nest00000060_inspire',
         attribution: 'Natural England',
         tiled: true,
         name: 'Marine conservation zones (England)'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--e42abb1210a2366c105e9441e6a2f8b9',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--e42abb1210a2366c105e9441e6a2f8b9',
         layers: 'eainspire2011-wms-eaimmor00170095',
         attribution: 'Marine Management Organisation',
         tiled: true,
@@ -292,7 +292,7 @@ var overlayData = [
         name: 'Loch Lomond and Trossachs National Park'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--f425f1e1-fc18-4b5a-88d8-76934125627c',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--f425f1e1-fc18-4b5a-88d8-76934125627c',
         layers: 'eainspire2011-wms-ancient_woodlandv_inspire',
         attribution: 'Natural England',
         tiled: true,
@@ -300,7 +300,7 @@ var overlayData = [
         name: 'Ancient woodland'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=40000000000000000',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=40000000000000000',
         layers: 'eainspire2011-wms-areas_of_onb_inspire',
         attribution: 'Natural England',
         tiled: true,
@@ -308,21 +308,21 @@ var overlayData = [
         name: 'Areas of outstanding natural beauty'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--ff213e4c-423a-4d7e-9e6f-b220600a8db3',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--ff213e4c-423a-4d7e-9e6f-b220600a8db3',
         layers: 'eainspire2011-wms-national_nature_reserve_inspire',
         attribution: 'Natural England',
         tiled: true,
         name: 'Nature reserves (England)'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--ba8dc201-66ef-4983-9d46-7378af21027e',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT--ba8dc201-66ef-4983-9d46-7378af21027e',
         layers: 'eainspire2011-wms-sites_of_ssi_inspire',
         attribution: 'Natural England',
         tiled: true,
         name: 'Sites of special scientific interest'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=400000000000',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=400000000000',
         layers: 'eainspire2011-wms-worldheritagesite_inspire',
         attribution: 'Historic England',
         tiled: true,
@@ -334,7 +334,7 @@ var overlayData = [
     groupName: 'Other',
     layers: [
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=10000000000',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=10000000000',
         layers: 'eainspire2011-wms-listedbuildingpoints_inspire',
         attribution: 'Historic England',
         tiled: true,
@@ -342,7 +342,7 @@ var overlayData = [
         name: 'Listed buildings'
       },
       {
-        url: 'http://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=200000000000',
+        url: 'https://environment.data.gov.uk/ds/wms?SERVICE=WMS&INTERFACE=ENVIRONMENT&LC=200000000000',
         layers: 'eainspire2011-wms-battlefield_inspire',
         attribution: 'Historic England',
         tiled: true,
