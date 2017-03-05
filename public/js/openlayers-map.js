@@ -1,6 +1,6 @@
 var mapboxStreets = new ol.layer.Tile({
   source: new ol.source.XYZ({
-    url: 'https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token={{mapbox_token}}'
+    url: 'https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=' + mapbox_token
   }),
   visible: false,
   attribution: 'Satellite © <a href="http://www.mapbox.com">Mapbox</a>'
@@ -8,7 +8,7 @@ var mapboxStreets = new ol.layer.Tile({
 
 var mapboxSat = new ol.layer.Tile({
   source: new ol.source.XYZ({
-    url: 'https://api.mapbox.com/styles/v1/gpimblott/cizl21vq3000p2snuftwgj7q1/tiles/256/{z}/{x}/{y}?access_token={{mapbox_token}}'
+    url: 'https://api.mapbox.com/styles/v1/gpimblott/cizl21vq3000p2snuftwgj7q1/tiles/256/{z}/{x}/{y}?access_token=' + mapbox_token
   }),
   visible: false,
   attribution: 'Satellite © <a href="http://www.mapbox.com">Mapbox</a>'
