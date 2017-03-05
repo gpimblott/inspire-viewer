@@ -105,7 +105,7 @@ var overlayData = [
     groupName: 'Land Usage',
     layers: [
       {
-        url: 'https://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
+        url: 'http://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
         layers: 'Green_Belt_2015_16_WGS84',
         attribution: "Department for Communities and Local Government",
         tiled: true,
@@ -113,7 +113,7 @@ var overlayData = [
         name: 'Greenbelt 2015-16',
       },
       {
-        url: 'https://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
+        url: 'http://maps.communities.gov.uk/geoserver/dclg_inspire/wms?service=WMS',
         layers: 'Local_Authority_Greenbelt_boundaries_2011-12',
         attribution: "Department for Communities and Local Government",
         tiled: true,
@@ -121,7 +121,7 @@ var overlayData = [
         name: 'Greenbelt 2011-12',
       },
       {
-        url: 'https://inspire.landregistry.gov.uk/inspire/ows',
+        url: 'http://inspire.landregistry.gov.uk/inspire/ows',
         layers: 'CP.CadastralParcel',
         name: 'Land Registry Land Parcels',
         tiled: false,
