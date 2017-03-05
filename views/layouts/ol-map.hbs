@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+
+    {{>head}}
+
+    <script src="http://openlayers.org/en/v3.0.0/build/ol.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" type="text/css">
+
+    <style>
+        .map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+{{>ol-map-menubar}}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+<div class="map-page fill" role="main">
+    {{{body}}}
+</div>
+</body>
+</html>

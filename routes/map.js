@@ -7,4 +7,11 @@ router.get('/', function (req, res, next) {
 
 });
 
+router.get('/ol', function (req, res, next) {
+
+  res.render("ol-map", {  layout: 'ol-map' });
+
+});
+
+
 module.exports = router;

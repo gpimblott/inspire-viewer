@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+
+    {{>head}}
+
+</head>
+<body>
+{{>map-menubar}}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<link rel="stylesheet" href="/css/styledLayerControl.css"/>
+<script src="/js/leaflet.wms.js"></script>
+<script src="/js/styledLayerControl.js"></script>
+
+
+<div class="map-page fill" role="main">
+    {{{body}}}
+</div>
+</body>
+</html>

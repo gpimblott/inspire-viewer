@@ -83,19 +83,20 @@ var InspireViewApp = function () {
 
     // Setup Express
     self.app = express();
-    self.app.engine('handlebars',
+    self.app.engine('hbs',
       exphbs({
         helpers: {
           dateFormat: hdf
         },
-        defaultLayout: 'main'
+        defaultLayout: 'main',
+        extname: '.hbs'
       }));
 
     /**
      * Store in Express.
      */
     self.app.set('port', self.port);
-    self.app.set('view engine', 'handlebars');
+    self.app.set('view engine', 'hbs');
 
     // Lets encrypt response
     var letsEncryptUrl = process.env.LETS_ENCRYPT;
