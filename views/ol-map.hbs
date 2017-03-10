@@ -33,4 +33,10 @@
         });
 
     });
+
+    $(document).on('touchstart.dropdown.data-api', '.dropdown-submenu > a', function (event) {
+        window.scrollTo(0,0);
+        event.preventDefault();
+    });
+
 </script>
