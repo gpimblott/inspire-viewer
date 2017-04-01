@@ -15,18 +15,6 @@ var mapBounds = new L.LatLngBounds(
 var mapMinZoom = 1;
 var mapMaxZoom = 17;
 
-// Base World map
-var mapBoxStreets = L.tileLayer(
-  'https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
-    accessToken: mapbox_token,
-    attribution: 'Streets © <a href="http://www.mapbox.com">Mapbox</a>'
-  });
-
-var mapBoxSatellite = L.tileLayer(
-  'https://api.mapbox.com/styles/v1/gpimblott/cizl21vq3000p2snuftwgj7q1/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
-    accessToken: mapbox_token,
-    attribution: 'Satellite © <a href="http://www.mapbox.com">Mapbox</a>'
-  });
 
 var historicMap = L.tileLayer('https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg', {
   minZoom: mapMinZoom,
@@ -43,9 +31,7 @@ var baseMaps = [
     expanded: true,
     layers: {
       "Open Street Map": osm,
-      "1919-47 OS Maps": historicMap,
-      "Mapbox Street": mapBoxStreets,
-      "Mapbox Satellite": mapBoxSatellite
+      "1919-47 OS Maps": historicMap
     }
   }
 ];
